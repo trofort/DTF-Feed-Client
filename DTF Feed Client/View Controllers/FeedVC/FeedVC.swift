@@ -16,10 +16,16 @@ class FeedVC: UIViewController {
     
     // MARK: - Variables
     
-    lazy var modelView: FeedViewModel = {
+    private lazy var modelView: FeedViewModel = {
         let modelView: FeedViewModel = FeedViewModel()
         modelView.delegate = self
         return modelView
+    }()
+    
+    private lazy var adapter: FeedAdapter = {
+        let adapter = FeedAdapter(with: feedTableView)
+        adapter.delegate = self
+        return adapter
     }()
     
     // MARK: - Life cycle
@@ -46,10 +52,23 @@ class FeedVC: UIViewController {
 extension FeedVC: FeedViewModelDelegate {
     
     func feedViewModel(_ viewModel: FeedViewModel, didLoad feeds: [Feed]) {
-        print("loaded")
+        print("Feeds loaded")
+        adapter.reloadData(with: feeds)
     }
     
     func feedViewModel(_ viewModel: FeedViewModel, didCautch error: String) {
         print(error)
     }
+}
+
+extension FeedVC: FeedAdapterDelegate {
+    
+    func feedAdapter(_ feedAdapter: FeedAdapter, didSeledt feed: Feed) {
+        print("Feed selected with name: \"%@\"", feed.title)
+        guard let feedUrl = feed.link else { return }
+        if UIApplication.shared.canOpenURL(feedUrl) {
+            UIApplication.shared.open(feedUrl, options: [:], completionHandler: nil)
+        }
+    }
+    
 }

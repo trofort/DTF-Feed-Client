@@ -18,12 +18,16 @@ public enum FeedType {
 
 class Feed {
     
+    // MARK: - Properties
+    
     var type: FeedType
     var title: String
     var author: String
     var desc: String
     var images = [String]()
     var link: URL?
+    
+    // MARK: - Initialize
     
     init(with xmlElement: AEXMLElement) {
         title = xmlElement["title"].string

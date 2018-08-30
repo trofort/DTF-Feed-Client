@@ -29,12 +29,12 @@ class FeedViewModel {
                 weakSelf.delegate?.feedViewModel(weakSelf, didCautch: "Feeds loaded with error")
                 return
             }
-            let items = xmlDoc.children.filter({ $0.name == "item" })
-            if items.isEmpty {
+            let items = xmlDoc.root.children.first?.children.filter({ $0.name == "item" })
+            if items?.isEmpty ?? true {
                 weakSelf.delegate?.feedViewModel(weakSelf, didCautch: "Empty feeds")
             } else {
                 var feeds = [Feed]()
-                items.forEach({ feeds.append(Feed(with: $0)) })
+                items?.forEach({ feeds.append(Feed(with: $0)) })
                 weakSelf.delegate?.feedViewModel(weakSelf, didLoad: feeds)
             }
         }
