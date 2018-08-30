@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		762D5ED129A4F19C1BBDCF8A /* Pods_DTF_Feed_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425EC6F55EB9DDA6F1F04D51 /* Pods_DTF_Feed_Client.framework */; };
 		8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9521380FEF006E1807 /* AppDelegate.swift */; };
-		8D0ABC9821380FEF006E1807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9721380FEF006E1807 /* ViewController.swift */; };
 		8D0ABC9B21380FEF006E1807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9921380FEF006E1807 /* Main.storyboard */; };
 		8D0ABC9D21380FF1006E1807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9C21380FF1006E1807 /* Assets.xcassets */; };
 		8D0ABCA021380FF1006E1807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9E21380FF1006E1807 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		425EC6F55EB9DDA6F1F04D51 /* Pods_DTF_Feed_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTF_Feed_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DAA1B0E49DC58B27D694F0A /* Pods-DTF Feed Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.release.xcconfig"; sourceTree = "<group>"; };
 		8D0ABC9221380FEF006E1807 /* DTF Feed Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DTF Feed Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0ABC9521380FEF006E1807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D0ABC9721380FEF006E1807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D0ABC9A21380FEF006E1807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D0ABC9C21380FF1006E1807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D0ABC9F21380FF1006E1807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0ABCA121380FF1006E1807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762D5ED129A4F19C1BBDCF8A /* Pods_DTF_Feed_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		798974B12817DF5DAF70BA83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				425EC6F55EB9DDA6F1F04D51 /* Pods_DTF_Feed_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D0ABC8921380FEF006E1807 = {
 			isa = PBXGroup;
 			children = (
 				8D0ABC9421380FEF006E1807 /* DTF Feed Client */,
 				8D0ABC9321380FEF006E1807 /* Products */,
+				EE649CDC6873E7D2CC7A5665 /* Pods */,
+				798974B12817DF5DAF70BA83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +67,54 @@
 		8D0ABC9421380FEF006E1807 /* DTF Feed Client */ = {
 			isa = PBXGroup;
 			children = (
+				8D0ABCA821381052006E1807 /* View Controllers */,
 				8D0ABC9521380FEF006E1807 /* AppDelegate.swift */,
-				8D0ABC9721380FEF006E1807 /* ViewController.swift */,
-				8D0ABC9921380FEF006E1807 /* Main.storyboard */,
 				8D0ABC9C21380FF1006E1807 /* Assets.xcassets */,
 				8D0ABC9E21380FF1006E1807 /* LaunchScreen.storyboard */,
 				8D0ABCA121380FF1006E1807 /* Info.plist */,
 			);
 			path = "DTF Feed Client";
+			sourceTree = "<group>";
+		};
+		8D0ABCA821381052006E1807 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCAA2138106D006E1807 /* FeedVC */,
+				8D0ABC9921380FEF006E1807 /* Main.storyboard */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8D0ABCAA2138106D006E1807 /* FeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCAB2138107A006E1807 /* Views */,
+			);
+			path = FeedVC;
+			sourceTree = "<group>";
+		};
+		8D0ABCAB2138107A006E1807 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCAC21381081006E1807 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D0ABCAC21381081006E1807 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */,
+				4DAA1B0E49DC58B27D694F0A /* Pods-DTF Feed Client.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0ABCA421380FF1006E1807 /* Build configuration list for PBXNativeTarget "DTF Feed Client" */;
 			buildPhases = (
+				0EC1C87378E70B34B02CA586 /* [CP] Check Pods Manifest.lock */,
 				8D0ABC8E21380FEF006E1807 /* Sources */,
 				8D0ABC8F21380FEF006E1807 /* Frameworks */,
 				8D0ABC9021380FEF006E1807 /* Resources */,
+				6427A70A26ACF4658C7AC796 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +185,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EC1C87378E70B34B02CA586 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DTF Feed Client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6427A70A26ACF4658C7AC796 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D0ABC8E21380FEF006E1807 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D0ABC9821380FEF006E1807 /* ViewController.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,15 +373,13 @@
 		};
 		8D0ABCA521380FF1006E1807 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZU28TF445;
 				INFOPLIST_FILE = "DTF Feed Client/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MDCorp.DTF-Feed-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +389,13 @@
 		};
 		8D0ABCA621380FF1006E1807 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DAA1B0E49DC58B27D694F0A /* Pods-DTF Feed Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZU28TF445;
 				INFOPLIST_FILE = "DTF Feed Client/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MDCorp.DTF-Feed-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
