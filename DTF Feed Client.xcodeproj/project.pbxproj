@@ -13,6 +13,7 @@
 		8D0ABC9D21380FF1006E1807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9C21380FF1006E1807 /* Assets.xcassets */; };
 		8D0ABCA021380FF1006E1807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9E21380FF1006E1807 /* LaunchScreen.storyboard */; };
 		8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCAD21381375006E1807 /* FeedVC.swift */; };
+		8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCB021381490006E1807 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8D0ABC9F21380FF1006E1807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0ABCA121380FF1006E1807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0ABCAD21381375006E1807 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		8D0ABCB021381490006E1807 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		8D0ABCAF213813A2006E1807 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8D0ABCB021381490006E1807 /* ApiManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */,
+				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
