@@ -14,6 +14,9 @@
 		8D0ABCA021380FF1006E1807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC9E21380FF1006E1807 /* LaunchScreen.storyboard */; };
 		8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCAD21381375006E1807 /* FeedVC.swift */; };
 		8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCB021381490006E1807 /* ApiManager.swift */; };
+		8D0ABCB421381684006E1807 /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCB321381684006E1807 /* FeedAdapter.swift */; };
+		8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCB7213816C3006E1807 /* Feed.swift */; };
+		8D0ABCBA2138193D006E1807 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCB92138193D006E1807 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		8D0ABCA121380FF1006E1807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0ABCAD21381375006E1807 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		8D0ABCB021381490006E1807 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8D0ABCB321381684006E1807 /* FeedAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
+		8D0ABCB7213816C3006E1807 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		8D0ABCB92138193D006E1807 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +77,7 @@
 		8D0ABC9421380FEF006E1807 /* DTF Feed Client */ = {
 			isa = PBXGroup;
 			children = (
-				8D0ABCAF213813A2006E1807 /* Managers */,
+				8D0ABCB5213816A3006E1807 /* Classes */,
 				8D0ABCA821381052006E1807 /* View Controllers */,
 				8D0ABC9521380FEF006E1807 /* AppDelegate.swift */,
 				8D0ABC9C21380FF1006E1807 /* Assets.xcassets */,
@@ -93,8 +99,10 @@
 		8D0ABCAA2138106D006E1807 /* FeedVC */ = {
 			isa = PBXGroup;
 			children = (
+				8D0ABCB22138166D006E1807 /* Adapter */,
 				8D0ABCAB2138107A006E1807 /* Views */,
 				8D0ABCAD21381375006E1807 /* FeedVC.swift */,
+				8D0ABCB92138193D006E1807 /* FeedViewModel.swift */,
 			);
 			path = FeedVC;
 			sourceTree = "<group>";
@@ -120,6 +128,31 @@
 				8D0ABCB021381490006E1807 /* ApiManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		8D0ABCB22138166D006E1807 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCB321381684006E1807 /* FeedAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		8D0ABCB5213816A3006E1807 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCB6213816B0006E1807 /* Common */,
+				8D0ABCAF213813A2006E1807 /* Managers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D0ABCB6213816B0006E1807 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCB7213816C3006E1807 /* Feed.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -246,6 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */,
+				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
+				8D0ABCBA2138193D006E1807 /* FeedViewModel.swift in Sources */,
+				8D0ABCB421381684006E1807 /* FeedAdapter.swift in Sources */,
 				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
 			);
