@@ -36,6 +36,6 @@ class FeedWithMultiImageTableViewCell: FeedTextTableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        imagesStackView.arrangedSubviews.forEach({ imagesStackView.removeArrangedSubview($0) })
+        imagesStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
     }
 }
