@@ -54,16 +54,14 @@ class FeedAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: FeedTextTableViewCell = tableView.dequeueReusableCell(withType: FeedTextTableViewCell.self, and: indexPath) else { return UITableViewCell() }
-        if feeds.count > indexPath.row {
-            cell.configure(with: feeds[indexPath.row])
-        }
-        return cell
+        let feed = feeds[indexPath.row]
+        return FeedTableViewCellFactory.generateCell(for: tableView, at: indexPath, with: feed)
     }
     
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if feeds.count > indexPath.row {
             delegate?.feedAdapter(self, didSeledt: feeds[indexPath.row])
         }

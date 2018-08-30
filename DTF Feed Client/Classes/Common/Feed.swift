@@ -32,8 +32,8 @@ class Feed {
     init(with xmlElement: AEXMLElement) {
         title = xmlElement["title"].string
         author = xmlElement["author"].string
-        desc = xmlElement["description"].string
-        link = URL(string: xmlElement["link"].string)
+        desc = xmlElement["description"].string.replacingOccurrences(of: "<[^>]+>", with: " ", options: .regularExpression, range: nil).trimmingCharacters(in: .whitespacesAndNewlines)
+        link = URL(string: xmlElement["link"].string.replacingOccurrences(of: "?from-rss", with: ""))
         let imageLinks = xmlElement.children.filter({ $0.name == "enclosure" && $0.attributes["type"] == "image/jpeg" })
         if imageLinks.isEmpty {
             type = .text

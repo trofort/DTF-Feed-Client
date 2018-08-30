@@ -19,9 +19,14 @@ class FeedWithMultiImageTableViewCell: FeedTextTableViewCell {
     override func configure(with feed: Feed) {
         super.configure(with: feed)
         feed.images.forEach({
+            if imagesStackView.arrangedSubviews.count == 3 {
+                return
+            }
             let imageView = UIImageView(frame: .zero)
             if let imageUrl = URL(string: $0) {
+                imageView.clipsToBounds = true
                 imageView.af_setImage(withURL: imageUrl)
+                imageView.contentMode = .scaleAspectFill
                 imagesStackView.addArrangedSubview(imageView)
             }
         })
@@ -31,6 +36,6 @@ class FeedWithMultiImageTableViewCell: FeedTextTableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        imagesStackView.arrangedSubviews = [UIView]()
+//        imagesStackView.arrangedSubviews.forEach({ imagesStackView.removeArrangedSubview($0) })
     }
 }

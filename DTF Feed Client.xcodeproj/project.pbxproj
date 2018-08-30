@@ -22,6 +22,9 @@
 		8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCBF21382415006E1807 /* FeedWithMultiImageTableViewCell.swift */; };
 		8D0ABCC521382504006E1807 /* FeedTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABCC421382504006E1807 /* FeedTextTableViewCell.xib */; };
 		8D0ABCC821382779006E1807 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCC721382779006E1807 /* UITableView+Utils.swift */; };
+		8D0ABCCA21382BDD006E1807 /* FeedWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABCC921382BDD006E1807 /* FeedWithImageTableViewCell.xib */; };
+		8D0ABCCC21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABCCB21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib */; };
+		8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		8D0ABCBF21382415006E1807 /* FeedWithMultiImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedWithMultiImageTableViewCell.swift; sourceTree = "<group>"; };
 		8D0ABCC421382504006E1807 /* FeedTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTextTableViewCell.xib; sourceTree = "<group>"; };
 		8D0ABCC721382779006E1807 /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		8D0ABCC921382BDD006E1807 /* FeedWithImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedWithImageTableViewCell.xib; sourceTree = "<group>"; };
+		8D0ABCCB21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedWithMultiImageTableViewCell.xib; sourceTree = "<group>"; };
+		8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCellFactory.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,7 @@
 		8D0ABCAA2138106D006E1807 /* FeedVC */ = {
 			isa = PBXGroup;
 			children = (
+				8D0ABCCD213859C3006E1807 /* Factory */,
 				8D0ABCB22138166D006E1807 /* Adapter */,
 				8D0ABCAB2138107A006E1807 /* Views */,
 				8D0ABCAD21381375006E1807 /* FeedVC.swift */,
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				8D0ABCBD21382226006E1807 /* FeedWithImageTableViewCell.swift */,
+				8D0ABCC921382BDD006E1807 /* FeedWithImageTableViewCell.xib */,
 			);
 			path = FeedWithImage;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8D0ABCBF21382415006E1807 /* FeedWithMultiImageTableViewCell.swift */,
+				8D0ABCCB21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib */,
 			);
 			path = FeedWithMultiImage;
 			sourceTree = "<group>";
@@ -200,6 +209,14 @@
 				8D0ABCC721382779006E1807 /* UITableView+Utils.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8D0ABCCD213859C3006E1807 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -271,10 +288,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0ABCCA21382BDD006E1807 /* FeedWithImageTableViewCell.xib in Resources */,
 				8D0ABCA021380FF1006E1807 /* LaunchScreen.storyboard in Resources */,
 				8D0ABC9D21380FF1006E1807 /* Assets.xcassets in Resources */,
 				8D0ABCC521382504006E1807 /* FeedTextTableViewCell.xib in Resources */,
 				8D0ABC9B21380FEF006E1807 /* Main.storyboard in Resources */,
+				8D0ABCCC21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +353,7 @@
 				8D0ABCBA2138193D006E1807 /* FeedViewModel.swift in Sources */,
 				8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */,
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,
+				8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */,
 				8D0ABCB421381684006E1807 /* FeedAdapter.swift in Sources */,
 				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,

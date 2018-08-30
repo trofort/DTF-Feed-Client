@@ -64,7 +64,7 @@ extension FeedVC: FeedViewModelDelegate {
 extension FeedVC: FeedAdapterDelegate {
     
     func feedAdapter(_ feedAdapter: FeedAdapter, didSeledt feed: Feed) {
-        print("Feed selected with name: \"%@\"", feed.title)
+        print("Feed selected with name: ", feed.title)
         guard let feedUrl = feed.link else { return }
         if UIApplication.shared.canOpenURL(feedUrl) {
             UIApplication.shared.open(feedUrl, options: [:], completionHandler: nil)
