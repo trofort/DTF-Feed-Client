@@ -9,5 +9,6 @@ target 'DTF Feed Client' do
 
     pod 'Alamofire'
     pod 'AEXML'
+    pod 'AlamofireImage', '~> 3.3'
 
 end

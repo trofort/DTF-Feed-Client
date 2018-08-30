@@ -29,6 +29,15 @@ class FeedAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         super.init()
         tableView.delegate = self
         tableView.dataSource = self
+        configureTableView()
+    }
+    
+    // MARK: - Help methods
+    
+    private func configureTableView() {
+        tableView.register(T: FeedTextTableViewCell.self)
+        tableView.register(T: FeedWithImageTableViewCell.self)
+        tableView.register(T: FeedWithMultiImageTableViewCell.self)
     }
     
     // MARK: - Public Methods
@@ -45,7 +54,11 @@ class FeedAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell: FeedTextTableViewCell = tableView.dequeueReusableCell(withType: FeedTextTableViewCell.self, and: indexPath) else { return UITableViewCell() }
+        if feeds.count > indexPath.row {
+            cell.configure(with: feeds[indexPath.row])
+        }
+        return cell
     }
     
     // MARK: - UITableViewDelegate
