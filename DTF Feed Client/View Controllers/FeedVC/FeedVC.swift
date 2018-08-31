@@ -16,10 +16,10 @@ class FeedVC: UIViewController {
     
     // MARK: - Variables
     
-    private lazy var modelView: FeedViewModel = {
-        let modelView: FeedViewModel = FeedViewModel()
-        modelView.delegate = self
-        return modelView
+    private lazy var presenter: FeedPresenter = {
+        let presenter: FeedPresenter = FeedPresenter()
+        presenter.delegate = self
+        return presenter
     }()
     
     private lazy var adapter: FeedAdapter = {
@@ -38,7 +38,7 @@ class FeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        modelView.loadFeeds()
+        presenter.loadFeeds()
     }
     // MARK: - Methods
     
@@ -49,14 +49,14 @@ class FeedVC: UIViewController {
 
 //MARK: - ModelViewDelegate
 
-extension FeedVC: FeedViewModelDelegate {
+extension FeedVC: FeedPresenterDelegate {
     
-    func feedViewModel(_ viewModel: FeedViewModel, didLoad feeds: [Feed]) {
+    func feedPresenter(_ presenter: FeedPresenter, didLoad feeds: [Feed]) {
         print("Feeds loaded")
         adapter.reloadData(with: feeds)
     }
     
-    func feedViewModel(_ viewModel: FeedViewModel, didCautch error: String) {
+    func feedPresenter(_ presenter: FeedPresenter, didCautch error: String) {
         print(error)
     }
 }
