@@ -4,12 +4,14 @@ PODS:
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
   - EZSwiftExtensions (1.11)
+  - PKHUD (5.1.0)
 
 DEPENDENCIES:
   - AEXML
   - Alamofire
   - AlamofireImage (~> 3.3)
   - EZSwiftExtensions
+  - PKHUD
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -17,13 +19,15 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - EZSwiftExtensions
+    - PKHUD
 
 SPEC CHECKSUMS:
   AEXML: bae92c01e0da64132fd72f748721cda07466032b
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
 
-PODFILE CHECKSUM: 0cd9bee48ea220558e4132bf7f97e83625c0ed0f
+PODFILE CHECKSUM: 1815cdb2391fb60c21f809ed52269c0f9db0a73b
 
 COCOAPODS: 1.5.0

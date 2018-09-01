@@ -29,7 +29,7 @@
         <!--Channels-->
         <scene sceneID="ZvT-IV-a4u">
             <objects>
-                <viewController title="Channels" id="gSL-wR-U5k" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChannelsVC" title="Channels" id="gSL-wR-U5k" customClass="ChannelsVC" customModule="DTF_Feed_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MlZ-hC-a3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,8 +49,15 @@
                         <viewLayoutGuide key="safeArea" id="jpa-mF-INu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Channels" id="aj4-5S-m2g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2mQ-pV-Mu7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2mQ-pV-Mu7">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="gSL-wR-U5k" id="0IF-pW-pAe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="channelsTableView" destination="OhS-wt-4Pv" id="fBH-FX-r1Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zde-hr-l4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

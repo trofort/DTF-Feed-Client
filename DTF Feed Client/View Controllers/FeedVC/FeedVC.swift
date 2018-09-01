@@ -28,7 +28,11 @@ class FeedVC: UIViewController {
         return adapter
     }()
     
-    var feedUrl: String = ""
+    private var feedUrl: String {
+        return "https://" + channel + "/feed"
+    }
+    
+    var channel: String = ""
     
     // MARK: - Life cycle
 
@@ -44,7 +48,7 @@ class FeedVC: UIViewController {
     // MARK: - Methods
     
     private func configureView() {
-        title = "Feeds"
+        title = channel
     }
 }
 

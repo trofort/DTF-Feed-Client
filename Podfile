@@ -11,5 +11,6 @@ target 'DTF Feed Client' do
     pod 'AEXML'
     pod 'AlamofireImage', '~> 3.3'
     pod 'EZSwiftExtensions'
+    pod 'PKHUD'
     
 end
