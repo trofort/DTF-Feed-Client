@@ -13,10 +13,8 @@ import AEXML
 class ApiManager {
     static let shared = ApiManager()
     
-    private let feedURL = "https://dtf.ru/feed"
-    
-    func loadFeeds(completion: @escaping (AEXMLDocument?) -> Void) {
-        Alamofire.request(feedURL,
+    func loadFeeds(with url: String, completion: @escaping (AEXMLDocument?) -> Void) {
+        Alamofire.request(url,
                           method: .get,
                           parameters: nil,
                           encoding: URLEncoding.default,

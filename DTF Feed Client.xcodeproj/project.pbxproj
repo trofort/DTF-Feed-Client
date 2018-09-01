@@ -25,6 +25,11 @@
 		8D0ABCCA21382BDD006E1807 /* FeedWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABCC921382BDD006E1807 /* FeedWithImageTableViewCell.xib */; };
 		8D0ABCCC21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABCCB21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib */; };
 		8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */; };
+		8D0ABCD4213AF4D2006E1807 /* UIAlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCD3213AF4D2006E1807 /* UIAlertController+Utils.swift */; };
+		8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */; };
+		8D0ABCD8213AF8F7006E1807 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCD7213AF8F7006E1807 /* ChannelsVC.swift */; };
+		8D0ABCDA213B07DC006E1807 /* ChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */; };
+		8D0ABCDF213B091C006E1807 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCDE213B091C006E1807 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +54,11 @@
 		8D0ABCC921382BDD006E1807 /* FeedWithImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedWithImageTableViewCell.xib; sourceTree = "<group>"; };
 		8D0ABCCB21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedWithMultiImageTableViewCell.xib; sourceTree = "<group>"; };
 		8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCellFactory.swift; sourceTree = "<group>"; };
+		8D0ABCD3213AF4D2006E1807 /* UIAlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utils.swift"; sourceTree = "<group>"; };
+		8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
+		8D0ABCD7213AF8F7006E1807 /* ChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
+		8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPresenter.swift; sourceTree = "<group>"; };
+		8D0ABCDE213B091C006E1807 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +117,7 @@
 		8D0ABCA821381052006E1807 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8D0ABCD221397E94006E1807 /* ChannelsVC */,
 				8D0ABCAA2138106D006E1807 /* FeedVC */,
 				8D0ABC9921380FEF006E1807 /* Main.storyboard */,
 			);
@@ -147,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				8D0ABCB021381490006E1807 /* ApiManager.swift */,
+				8D0ABCDE213B091C006E1807 /* CacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -207,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				8D0ABCC721382779006E1807 /* UITableView+Utils.swift */,
+				8D0ABCD3213AF4D2006E1807 /* UIAlertController+Utils.swift */,
+				8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -217,6 +231,39 @@
 				8D0ABCCE213859DA006E1807 /* FeedTableViewCellFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		8D0ABCD221397E94006E1807 /* ChannelsVC */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCDC213B07FF006E1807 /* Views */,
+				8D0ABCDB213B07F8006E1807 /* Adapter */,
+				8D0ABCD7213AF8F7006E1807 /* ChannelsVC.swift */,
+				8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */,
+			);
+			path = ChannelsVC;
+			sourceTree = "<group>";
+		};
+		8D0ABCDB213B07F8006E1807 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		8D0ABCDC213B07FF006E1807 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCDD213B0809006E1807 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D0ABCDD213B0809006E1807 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -328,12 +375,14 @@
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -347,16 +396,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0ABCD8213AF8F7006E1807 /* ChannelsVC.swift in Sources */,
 				8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */,
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
 				8D0ABCBA2138193D006E1807 /* FeedPresenter.swift in Sources */,
+				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,
 				8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */,
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,
 				8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */,
+				8D0ABCDA213B07DC006E1807 /* ChannelPresenter.swift in Sources */,
 				8D0ABCB421381684006E1807 /* FeedAdapter.swift in Sources */,
 				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
+				8D0ABCDF213B091C006E1807 /* CacheManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
+				8D0ABCD4213AF4D2006E1807 /* UIAlertController+Utils.swift in Sources */,
 				8D0ABCC821382779006E1807 /* UITableView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

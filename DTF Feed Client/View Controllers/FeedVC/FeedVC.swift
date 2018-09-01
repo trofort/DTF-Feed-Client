@@ -28,6 +28,8 @@ class FeedVC: UIViewController {
         return adapter
     }()
     
+    var feedUrl: String = ""
+    
     // MARK: - Life cycle
 
     override func viewDidLoad() {
@@ -37,8 +39,7 @@ class FeedVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        presenter.loadFeeds()
+        presenter.loadFeeds(with: feedUrl)
     }
     // MARK: - Methods
     
@@ -56,9 +57,6 @@ extension FeedVC: FeedPresenterDelegate {
         adapter.reloadData(with: feeds)
     }
     
-    func feedPresenter(_ presenter: FeedPresenter, didCautch error: String) {
-        print(error)
-    }
 }
 
 extension FeedVC: FeedAdapterDelegate {
