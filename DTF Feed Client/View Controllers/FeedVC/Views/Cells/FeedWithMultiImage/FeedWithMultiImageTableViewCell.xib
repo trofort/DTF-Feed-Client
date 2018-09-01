@@ -34,31 +34,40 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KV0-v3-GOk">
-                    <rect key="frame" x="16" y="212" width="363" height="120"/>
+                    <rect key="frame" x="16" y="196" width="363" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="QKm-3Y-Uel"/>
                     </constraints>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67a-QN-nKa">
+                    <rect key="frame" x="341" y="323" width="38" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KV0-v3-GOk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="2mV-FM-fha"/>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="48x-MO-awf"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="6xr-ix-dTW"/>
+                <constraint firstAttribute="bottom" secondItem="67a-QN-nKa" secondAttribute="bottom" constant="8" id="KPk-d7-2SP"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="top" secondItem="s9f-k9-fNL" secondAttribute="bottom" constant="16" id="LBm-K3-STd"/>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="RTU-NO-bRw"/>
+                <constraint firstAttribute="trailing" secondItem="67a-QN-nKa" secondAttribute="trailing" constant="16" id="Rho-6v-Rd9"/>
                 <constraint firstItem="KV0-v3-GOk" firstAttribute="top" secondItem="pDz-qu-BSU" secondAttribute="bottom" constant="24" id="a7q-Ye-tI9"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pDz-qu-BSU" secondAttribute="trailing" constant="16" id="e8d-je-DRI"/>
                 <constraint firstItem="s9f-k9-fNL" firstAttribute="top" secondItem="yDK-sA-Yzd" secondAttribute="bottom" constant="8" id="iie-xa-kzg"/>
                 <constraint firstAttribute="trailing" secondItem="KV0-v3-GOk" secondAttribute="trailing" constant="16" id="kve-M3-jug"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s9f-k9-fNL" secondAttribute="trailing" constant="16" id="mpO-re-pgE"/>
                 <constraint firstItem="s9f-k9-fNL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="p4h-UJ-eDS"/>
-                <constraint firstAttribute="bottom" secondItem="KV0-v3-GOk" secondAttribute="bottom" constant="16" id="srk-ar-tG1"/>
+                <constraint firstAttribute="bottom" secondItem="KV0-v3-GOk" secondAttribute="bottom" constant="32" id="srk-ar-tG1"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yDK-sA-Yzd" secondAttribute="trailing" constant="16" id="syg-Yb-MaO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="authorLabel" destination="s9f-k9-fNL" id="BIY-k9-PDK"/>
+                <outlet property="dateLabel" destination="67a-QN-nKa" id="MPb-a2-O1d"/>
                 <outlet property="descLabel" destination="pDz-qu-BSU" id="6tO-jn-oWF"/>
                 <outlet property="imagesStackView" destination="KV0-v3-GOk" id="E6y-EH-uvF"/>
                 <outlet property="titleLabel" destination="yDK-sA-Yzd" id="6jI-cY-R6V"/>

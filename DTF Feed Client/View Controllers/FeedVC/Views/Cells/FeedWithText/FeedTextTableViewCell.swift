@@ -15,6 +15,7 @@ class FeedTextTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     // MARK: - Configure Method
     
@@ -22,6 +23,7 @@ class FeedTextTableViewCell: UITableViewCell {
         titleLabel.text = feed.title
         descLabel.text = feed.desc
         authorLabel.text = feed.author
+        dateLabel.text = feed.date?.stringDate
     }
     
 

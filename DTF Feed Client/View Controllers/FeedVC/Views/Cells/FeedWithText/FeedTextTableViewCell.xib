@@ -33,14 +33,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42I-GG-SVG">
+                    <rect key="frame" x="341" y="91" width="38" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="48x-MO-awf"/>
+                <constraint firstAttribute="trailing" secondItem="42I-GG-SVG" secondAttribute="trailing" constant="16" id="5oX-gb-ZGB"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="6xr-ix-dTW"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="top" secondItem="s9f-k9-fNL" secondAttribute="bottom" constant="16" id="LBm-K3-STd"/>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="RTU-NO-bRw"/>
-                <constraint firstAttribute="bottom" secondItem="pDz-qu-BSU" secondAttribute="bottom" constant="16" id="b10-2k-ljC"/>
+                <constraint firstAttribute="bottom" secondItem="42I-GG-SVG" secondAttribute="bottom" constant="8" id="ZCh-jz-nfU"/>
+                <constraint firstAttribute="bottom" secondItem="pDz-qu-BSU" secondAttribute="bottom" constant="32" id="b10-2k-ljC"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pDz-qu-BSU" secondAttribute="trailing" constant="16" id="e8d-je-DRI"/>
                 <constraint firstItem="s9f-k9-fNL" firstAttribute="top" secondItem="yDK-sA-Yzd" secondAttribute="bottom" constant="8" id="iie-xa-kzg"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s9f-k9-fNL" secondAttribute="trailing" constant="16" id="mpO-re-pgE"/>
@@ -50,6 +58,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="authorLabel" destination="s9f-k9-fNL" id="BIY-k9-PDK"/>
+                <outlet property="dateLabel" destination="42I-GG-SVG" id="gGf-ds-Tlw"/>
                 <outlet property="descLabel" destination="pDz-qu-BSU" id="6tO-jn-oWF"/>
                 <outlet property="titleLabel" destination="yDK-sA-Yzd" id="6jI-cY-R6V"/>
             </connections>

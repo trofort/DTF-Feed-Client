@@ -31,6 +31,7 @@
 		8D0ABCDA213B07DC006E1807 /* ChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */; };
 		8D0ABCDF213B091C006E1807 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCDE213B091C006E1807 /* CacheManager.swift */; };
 		8D0ABCE1213B0B77006E1807 /* ChannelsTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCE0213B0B77006E1807 /* ChannelsTableViewAdapter.swift */; };
+		8D0ABCE3213B2E99006E1807 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPresenter.swift; sourceTree = "<group>"; };
 		8D0ABCDE213B091C006E1807 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		8D0ABCE0213B0B77006E1807 /* ChannelsTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewAdapter.swift; sourceTree = "<group>"; };
+		8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +225,7 @@
 				8D0ABCC721382779006E1807 /* UITableView+Utils.swift */,
 				8D0ABCD3213AF4D2006E1807 /* UIAlertController+Utils.swift */,
 				8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */,
+				8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0ABCD8213AF8F7006E1807 /* ChannelsVC.swift in Sources */,
+				8D0ABCE3213B2E99006E1807 /* Date+Utils.swift in Sources */,
 				8D0ABCAE21381375006E1807 /* FeedVC.swift in Sources */,
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
@@ -549,7 +553,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZU28TF445;
 				INFOPLIST_FILE = "DTF Feed Client/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MDCorp.DTF-Feed-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -565,7 +572,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZU28TF445;
 				INFOPLIST_FILE = "DTF Feed Client/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MDCorp.DTF-Feed-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
