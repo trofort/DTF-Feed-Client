@@ -36,7 +36,17 @@ class FeedVC: UIViewController {
         webView.navigationDelegate = self
         webView.load(URLRequest(url: url))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem.getBarButtonItemWithActivityIndivator()
+        
+        
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButton)), UIBarButtonItem.getBarButtonItemWithActivityIndivator()]
+    }
+    
+    // MARK: - Actions
+    
+    @objc func shareButton() {
+        guard let url = feed?.link else { return }
+        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        presentVC(activityVC)
     }
 }
 
@@ -45,7 +55,7 @@ class FeedVC: UIViewController {
 extension FeedVC: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        navigationItem.rightBarButtonItem = nil
+        navigationItem.rightBarButtonItems?.removeLast()
     }
     
 }
