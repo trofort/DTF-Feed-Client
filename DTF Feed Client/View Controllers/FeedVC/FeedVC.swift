@@ -8,16 +8,44 @@
 
 import UIKit
 import WebKit
+import PKHUD
 
 class FeedVC: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet private weak var webView: WKWebView!
     
-    var link: URL?
+    // MARK: - Variables
+    
+    var feed: Feed?
+    
+    // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.
-        webView.reload()
+        configureView()
     }
+    
+    // MARK: - Methods
+    
+    private func configureView() {
+        title = feed?.title
+        
+        guard let url = feed?.link else { return }
+        webView.navigationDelegate = self
+        webView.load(URLRequest(url: url))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.getBarButtonItemWithActivityIndivator()
+    }
+}
+
+//MARK: - WKNavigationDelegate
+
+extension FeedVC: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        navigationItem.rightBarButtonItem = nil
+    }
+    
 }

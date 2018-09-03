@@ -42,12 +42,9 @@ class FeedsListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         presenter.loadFeeds(with: feedUrl)
     }
+    
     // MARK: - Methods
     
     private func configureView() {
@@ -70,10 +67,9 @@ extension FeedsListVC: FeedAdapterDelegate {
     
     func feedAdapter(_ feedAdapter: FeedAdapter, didSeledt feed: Feed) {
         print("Feed selected with name: ", feed.title)
-        guard let feedUrl = feed.link else { return }
-        if UIApplication.shared.canOpenURL(feedUrl) {
-            UIApplication.shared.open(feedUrl, options: [:], completionHandler: nil)
-        }
+        guard let nextVC = UIStoryboard.main.instantiateVC(FeedVC.self) else { return }
+        nextVC.feed = feed
+        pushVC(nextVC)
     }
     
 }

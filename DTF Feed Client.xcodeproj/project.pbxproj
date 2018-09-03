@@ -34,6 +34,7 @@
 		8D0ABCE3213B2E99006E1807 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */; };
 		8D350DD5213D658A00AEE725 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD4213D658A00AEE725 /* Channel.swift */; };
 		8D350DD8213D69B500AEE725 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD7213D69B500AEE725 /* FeedVC.swift */; };
+		8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		8D350DD4213D658A00AEE725 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		8D350DD7213D69B500AEE725 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 				8D0ABCD3213AF4D2006E1807 /* UIAlertController+Utils.swift */,
 				8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */,
 				8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */,
+				8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
 				8D0ABCBA2138193D006E1807 /* FeedsListPresenter.swift in Sources */,
+				8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */,
 				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,
 				8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */,
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,

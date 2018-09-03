@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="87" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--FeedVC-->
         <scene sceneID="ZKb-j7-gLZ">
             <objects>
-                <viewController id="DQM-0K-VEB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedVC" id="DQM-0K-VEB" customClass="FeedVC" customModule="DTF_Feed_Client" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VBB-Uz-uWQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gu4-OK-bLz"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="0hY-9Y-Uag" id="jx3-Ln-J6s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwq-s1-8af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
