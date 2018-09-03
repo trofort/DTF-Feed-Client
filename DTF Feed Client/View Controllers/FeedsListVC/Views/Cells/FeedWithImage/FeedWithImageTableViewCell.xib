@@ -45,6 +45,12 @@
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blT-Lt-OGH">
+                    <rect key="frame" x="16" y="322" width="37" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -53,6 +59,8 @@
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="6xr-ix-dTW"/>
                 <constraint firstItem="sV2-Ic-2Hq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Gw1-p2-HfO"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="top" secondItem="s9f-k9-fNL" secondAttribute="bottom" constant="16" id="LBm-K3-STd"/>
+                <constraint firstAttribute="bottom" secondItem="blT-Lt-OGH" secondAttribute="bottom" constant="8" id="Lh0-lG-0F1"/>
+                <constraint firstItem="blT-Lt-OGH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="MUT-6Q-InE"/>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="RTU-NO-bRw"/>
                 <constraint firstAttribute="bottom" secondItem="sV2-Ic-2Hq" secondAttribute="bottom" constant="32" id="TrH-PQ-2Ol"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pDz-qu-BSU" secondAttribute="trailing" constant="16" id="e8d-je-DRI"/>
@@ -70,6 +78,7 @@
                 <outlet property="dateLabel" destination="1hN-9F-0fS" id="JUQ-Sw-fU2"/>
                 <outlet property="descLabel" destination="pDz-qu-BSU" id="6tO-jn-oWF"/>
                 <outlet property="feedImageView" destination="sV2-Ic-2Hq" id="0AL-ZL-u0C"/>
+                <outlet property="hostLabel" destination="blT-Lt-OGH" id="Y9G-bN-lJH"/>
                 <outlet property="titleLabel" destination="yDK-sA-Yzd" id="6jI-cY-R6V"/>
             </connections>
             <point key="canvasLocation" x="43.5" y="-107"/>

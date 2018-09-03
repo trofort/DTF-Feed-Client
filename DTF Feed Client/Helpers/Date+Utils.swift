@@ -11,10 +11,10 @@ import UIKit
 
 extension Date {
     
-    static func date(from string: String) -> Date? {
+    static func date(from string: String) -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
-        return formatter.date(from: string)
+        return formatter.date(from: string) ?? Date()
     }
     
     var stringDate: String {

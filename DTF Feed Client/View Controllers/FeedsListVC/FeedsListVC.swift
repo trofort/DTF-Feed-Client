@@ -16,8 +16,8 @@ class FeedsListVC: UIViewController {
     
     // MARK: - Variables
     
-    private lazy var presenter: FeedsListPresenter = {
-        let presenter: FeedsListPresenter = FeedsListPresenter()
+    lazy var presenter: FeedsListPresenter = {
+        let presenter = channel != nil ? FeedsListPresenter() : AllFeedsPresenter()
         presenter.delegate = self
         return presenter
     }()
@@ -45,7 +45,7 @@ class FeedsListVC: UIViewController {
     // MARK: - Methods
     
     private func configureView() {
-        title = channel?.host
+        title = channel?.host ?? "All News"
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ChannelsTableViewAdapterDelegate {
-    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: Channel)
+    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: Channel?)
 }
 
 class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
@@ -83,7 +83,8 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.channelsAdapter(self, didSelect: channels[indexPath.row])
+        let sectionType = ChannelsSectionType(rawValue: indexPath.section)
+        delegate?.channelsAdapter(self, didSelect: sectionType == .all ? nil : channels[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

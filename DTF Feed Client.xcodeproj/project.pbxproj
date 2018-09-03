@@ -35,6 +35,7 @@
 		8D350DD5213D658A00AEE725 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD4213D658A00AEE725 /* Channel.swift */; };
 		8D350DD8213D69B500AEE725 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD7213D69B500AEE725 /* FeedVC.swift */; };
 		8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */; };
+		8D350DDF213D8A7100AEE725 /* AllFeedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		8D350DD4213D658A00AEE725 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		8D350DD7213D69B500AEE725 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
+		8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFeedsPresenter.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,11 +140,11 @@
 		8D0ABCAA2138106D006E1807 /* FeedsListVC */ = {
 			isa = PBXGroup;
 			children = (
+				8D350DDB213D8A2C00AEE725 /* Presenters */,
 				8D0ABCCD213859C3006E1807 /* Factory */,
 				8D0ABCB22138166D006E1807 /* Adapter */,
 				8D0ABCAB2138107A006E1807 /* Views */,
 				8D0ABCAD21381375006E1807 /* FeedsListVC.swift */,
-				8D0ABCB92138193D006E1807 /* FeedsListPresenter.swift */,
 			);
 			path = FeedsListVC;
 			sourceTree = "<group>";
@@ -271,6 +273,15 @@
 				8D350DD7213D69B500AEE725 /* FeedVC.swift */,
 			);
 			path = FeedVC;
+			sourceTree = "<group>";
+		};
+		8D350DDB213D8A2C00AEE725 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABCB92138193D006E1807 /* FeedsListPresenter.swift */,
+				8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -411,6 +422,7 @@
 				8D0ABCAE21381375006E1807 /* FeedsListVC.swift in Sources */,
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
+				8D350DDF213D8A7100AEE725 /* AllFeedsPresenter.swift in Sources */,
 				8D0ABCBA2138193D006E1807 /* FeedsListPresenter.swift in Sources */,
 				8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */,
 				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,

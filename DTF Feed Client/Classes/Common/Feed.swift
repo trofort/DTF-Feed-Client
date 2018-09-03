@@ -26,7 +26,7 @@ class Feed {
     var desc: String
     var images = [String]()
     var link: URL?
-    var date: Date?
+    var date: Date
     
     // MARK: - Initialize
     

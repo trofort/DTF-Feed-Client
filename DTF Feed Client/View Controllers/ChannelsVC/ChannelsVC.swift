@@ -56,7 +56,7 @@ class ChannelsVC: UIViewController {
 
 extension ChannelsVC: ChannelsTableViewAdapterDelegate {
     
-    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: Channel) {
+    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: Channel?) {
         guard let nextVC = UIStoryboard.main.instantiateVC(FeedsListVC.self) else { return }
         nextVC.channel = channel
         pushVC(nextVC)

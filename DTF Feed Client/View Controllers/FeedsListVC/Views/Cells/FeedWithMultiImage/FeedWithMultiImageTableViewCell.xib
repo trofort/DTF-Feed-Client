@@ -45,11 +45,19 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-fb-WSM">
+                    <rect key="frame" x="16" y="322" width="37" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KV0-v3-GOk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="2mV-FM-fha"/>
                 <constraint firstItem="yDK-sA-Yzd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="48x-MO-awf"/>
+                <constraint firstItem="6TL-fb-WSM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="4s2-K5-9e5"/>
+                <constraint firstAttribute="bottom" secondItem="6TL-fb-WSM" secondAttribute="bottom" constant="8" id="5ii-em-QGh"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="6xr-ix-dTW"/>
                 <constraint firstAttribute="bottom" secondItem="67a-QN-nKa" secondAttribute="bottom" constant="8" id="KPk-d7-2SP"/>
                 <constraint firstItem="pDz-qu-BSU" firstAttribute="top" secondItem="s9f-k9-fNL" secondAttribute="bottom" constant="16" id="LBm-K3-STd"/>
@@ -69,6 +77,7 @@
                 <outlet property="authorLabel" destination="s9f-k9-fNL" id="BIY-k9-PDK"/>
                 <outlet property="dateLabel" destination="67a-QN-nKa" id="MPb-a2-O1d"/>
                 <outlet property="descLabel" destination="pDz-qu-BSU" id="6tO-jn-oWF"/>
+                <outlet property="hostLabel" destination="6TL-fb-WSM" id="KVW-Nk-POG"/>
                 <outlet property="imagesStackView" destination="KV0-v3-GOk" id="E6y-EH-uvF"/>
                 <outlet property="titleLabel" destination="yDK-sA-Yzd" id="6jI-cY-R6V"/>
             </connections>

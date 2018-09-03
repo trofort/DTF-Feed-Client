@@ -16,6 +16,7 @@ class FeedTextTableViewCell: UITableViewCell {
     @IBOutlet private weak var descLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var hostLabel: UILabel!
     
     // MARK: - Configure Method
     
@@ -23,7 +24,8 @@ class FeedTextTableViewCell: UITableViewCell {
         titleLabel.text = feed.title
         descLabel.text = feed.desc
         authorLabel.text = feed.author
-        dateLabel.text = feed.date?.stringDate
+        dateLabel.text = feed.date.stringDate
+        hostLabel.text = feed.link?.host
     }
     
 

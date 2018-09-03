@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PKHUD
 
 protocol FeedPresenterDelegate {
     func feedPresenter(_ presenter: FeedsListPresenter, didLoad feeds: [Feed])
@@ -22,6 +23,7 @@ class FeedsListPresenter {
     // MARK: - Public methods
     
     public func loadFeeds(with url: String) {
+        HUD.show(.progress)
         ApiManager.shared.loadFeeds(with: url) { [weak self] (xmlDocument) in
             guard let weakSelf = self else { return }
             guard let xmlDoc = xmlDocument else {
@@ -35,6 +37,9 @@ class FeedsListPresenter {
                 var feeds = [Feed]()
                 items?.forEach({ feeds.append(Feed(with: $0)) })
                 weakSelf.delegate?.feedPresenter(weakSelf, didLoad: feeds)
+            }
+            DispatchQueue.main.async {
+                HUD.hide()
             }
         }
     }
