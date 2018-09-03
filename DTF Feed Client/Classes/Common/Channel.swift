@@ -14,6 +14,10 @@ class Channel: Codable {
     var host: String
     var rssPath: String
     
+    var fullPath: String {
+        return "https://" + host +  "/" + rssPath
+    }
+    
     init(with host: String, rssPath: String) {
         self.host = host
         self.rssPath = rssPath

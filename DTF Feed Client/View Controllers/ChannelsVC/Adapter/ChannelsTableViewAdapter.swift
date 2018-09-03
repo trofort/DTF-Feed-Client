@@ -15,6 +15,25 @@ protocol ChannelsTableViewAdapterDelegate {
 
 class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    enum ChannelsSectionType: Int {
+        case all = 0
+        case hosts = 1
+        
+        var title: String? {
+            switch self {
+            case .all:      return nil
+            case .hosts:    return "Channels"
+            }
+        }
+        
+        var height: CGFloat {
+            switch self {
+            case .all:      return 0.0
+            case .hosts:    return 30.0
+            }
+        }
+    }
+    
     // MARK: - Variables
     
     private var tableView: UITableView
@@ -40,14 +59,24 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     
     // MARK: - UITableViewDataSource
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return channels.count
+        let sectionType = ChannelsSectionType(rawValue: section)
+        return sectionType == .all ? 1 : channels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionType = ChannelsSectionType(rawValue: indexPath.section)
         let cell = UITableViewCell()
-        cell.textLabel?.text = channels[indexPath.row].host
+        cell.textLabel?.text = sectionType == .all ? "All News" : channels[indexPath.row].host
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ChannelsSectionType(rawValue: section)?.title
     }
     
     // MARK: - UITableViewDelegate
@@ -63,5 +92,9 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
             CacheManager.default.channels.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return ChannelsSectionType(rawValue: section)?.height ?? 0.0
     }
 }

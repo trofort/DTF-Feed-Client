@@ -29,10 +29,7 @@ class FeedsListVC: UIViewController {
     }()
     
     private var feedUrl: String {
-        guard let channel = channel else {
-            return ""
-        }
-        return "https://" + channel.host + "/" + channel.rssPath
+        return channel?.fullPath ?? ""
     }
     
     var channel: Channel?

@@ -27,4 +27,29 @@ class ApiManager {
         }
     }
     
+    func loadAllFeeds(at channels: [Channel], completion: @escaping ([Feed]) -> Void) {
+        let queue = DispatchQueue(label: "loadFeedsQueue")
+        var feeds = [Feed]()
+        channels.forEach({ channel in
+            queue.async { [weak self] in
+                let sema = DispatchSemaphore(value: 0)
+                
+                self?.loadFeeds(with: channel.fullPath, completion: { (xmlDoc) in
+                    let items = xmlDoc?.root.children.first?.children.filter({ $0.name == "item" })
+                    if items?.isEmpty ?? true {
+                        UIAlertController.show(with: "Empty feeds")
+                    } else {
+                        items?.forEach({ feeds.append(Feed(with: $0)) })
+                    }
+                    sema.signal()
+                })
+                
+                _ = sema.wait()
+            }
+        })
+        queue.async {
+            completion(feeds)
+        }
+    }
+    
 }
