@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ChannelsTableViewAdapterDelegate {
-    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: String)
+    func channelsAdapter(_ channelsAdapter: ChannelsTableViewAdapter, didSelect channel: Channel)
 }
 
 class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
@@ -18,7 +18,7 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     // MARK: - Variables
     
     private var tableView: UITableView
-    private var channels = [String]()
+    private var channels = [Channel]()
     
     var delegate: ChannelsTableViewAdapterDelegate?
 
@@ -33,7 +33,7 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     
     // MARK: - Methods
     
-    public func reloadData(with channels: [String]) {
+    public func reloadData(with channels: [Channel]) {
         self.channels = channels
         tableView.reloadData()
     }
@@ -46,7 +46,7 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = channels[indexPath.row]
+        cell.textLabel?.text = channels[indexPath.row].host
         return cell
     }
     

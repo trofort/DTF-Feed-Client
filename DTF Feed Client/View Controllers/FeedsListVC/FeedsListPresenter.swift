@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 protocol FeedPresenterDelegate {
-    func feedPresenter(_ presenter: FeedPresenter, didLoad feeds: [Feed])
+    func feedPresenter(_ presenter: FeedsListPresenter, didLoad feeds: [Feed])
 }
 
-class FeedPresenter {
+class FeedsListPresenter {
     
     // MARK: - Variables
     

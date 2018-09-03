@@ -19,14 +19,20 @@ extension UIAlertController {
         UIApplication.topViewController()?.presentVC(alertController)
     }
  
-    class func show(with title: String? = nil, message: String? = nil, textFieldCompletion: @escaping (String?) -> Void) {
+    class func show(with title: String? = nil, message: String? = nil, textFieldCompletion: @escaping (String?, String?) -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addTextField { textField in
             textField.placeholder = "Site name"
+            textField.keyboardType = .URL
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "RSS path"
+            textField.keyboardType = .URL
         }
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
-            guard let firstTextField = alertController.textFields?[0] else { return }
-            textFieldCompletion(firstTextField.text)
+            guard let firstTextField = alertController.textFields?[0],
+                  let secondTextField = alertController.textFields?[1] else { return }
+            textFieldCompletion(firstTextField.text, secondTextField.text)
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         

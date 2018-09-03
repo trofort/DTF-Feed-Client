@@ -22,9 +22,28 @@ class CacheManager {
     
     // MARK: - Vatiables
     
-    var channels: [String] {
-        get { return ud.object(forKey: kChannels) as? [String] ?? [String]() }
-        set { ud.set(newValue, forKey: kChannels) }
+    var channels: [Channel] {
+        get { return get(key: kChannels, type: [Channel].self) ?? [Channel]() }
+        set { set(key: kChannels, obj: newValue) }
+    }
+    
+    // MARK: - Helpers
+    
+    private func get<T: Codable>(key: String, type: T.Type) -> T? {
+        if let data = ud.data(forKey: key) {
+            return try? JSONDecoder().decode(T.self, from: data)
+        } else {
+            return nil
+        }
+    }
+    
+    private func set<T: Codable>(key: String, obj: T?) {
+        if let obj = obj {
+            ud.set(try? JSONEncoder().encode(obj), forKey: key)
+        } else {
+            ud.removeObject(forKey: key)
+        }
+        ud.synchronize()
     }
     
 }

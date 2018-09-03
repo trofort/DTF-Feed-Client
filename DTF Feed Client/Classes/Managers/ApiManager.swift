@@ -15,7 +15,7 @@ class ApiManager {
     static let shared = ApiManager()
     
     func loadFeeds(with url: String, completion: @escaping (AEXMLDocument?) -> Void) {
-        HUD.flash(.progress)
+        HUD.show(.progress)
         Alamofire.request(url,
                           method: .get,
                           parameters: nil,
@@ -23,7 +23,7 @@ class ApiManager {
                           headers: nil).response { (response) in
                             guard let xmlData = response.data else { return }
                             completion(try? AEXMLDocument(xml: xmlData))
-                            PKHUD.sharedHUD.hide(afterDelay: 2.0)
+                            PKHUD.sharedHUD.hide()
         }
     }
     
