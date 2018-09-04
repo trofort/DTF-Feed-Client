@@ -23,12 +23,23 @@ class ChannelPresenter {
     
     public func addButtonTapped() {
         UIAlertController.show(with: "Add new URL",
-                               message: "Please, type host") { [weak self] (host, rssPath) in
-                                if let host = host,
-                                   let rssPath = rssPath {
-                                    guard let weakSelf = self else { return }
-                                    CacheManager.default.channels.append(Channel(with: host, rssPath: rssPath))
-                                    weakSelf.delegate?.channelPresenterWillReloadData(weakSelf)
+                               message: "Please, type host") { (host) in
+                                if let host = host {
+                                    ApiManager.shared.loadPage(with: "http://" + host,
+                                                               completion: { [weak self] (url, data) in
+                                                                guard let channelData = data,
+                                                                    let channelUrl = url else {
+                                                                        UIAlertController.show(with: "Error", message: "Please, check your internet connection")
+                                                                        return
+                                                                }
+                                                                guard let weakSelf = self,
+                                                                    let newChannel = Channel(with: channelUrl, and: channelData) else {
+                                                                        UIAlertController.show(with: "Error", message: "Host without rss channel")
+                                                                        return
+                                                                }
+                                                                CacheManager.default.channels.append(newChannel)
+                                                                weakSelf.delegate?.channelPresenterWillReloadData(weakSelf)
+                                    })
                                 } else {
                                     UIAlertController.show(with: "Error", message: "Please, type host name")
                                 }

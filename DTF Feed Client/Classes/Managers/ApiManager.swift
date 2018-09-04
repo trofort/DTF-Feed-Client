@@ -14,6 +14,20 @@ import PKHUD
 class ApiManager {
     static let shared = ApiManager()
     
+    func loadPage(with url: String, completion: @escaping (URL?, Data?) -> Void) {
+        HUD.show(.labeledProgress(title: "Parsing host", subtitle: "Please, wait"))
+        Alamofire.request(url,
+                          method: .get,
+                          parameters: nil,
+                          encoding: URLEncoding.default,
+                          headers: nil).response { (response) in
+                            DispatchQueue.main.async {
+                                HUD.hide()
+                            }
+                            completion(response.request?.url, response.data)
+        }
+    }
+    
     func loadFeeds(with url: String, completion: @escaping (AEXMLDocument?) -> Void) {
         Alamofire.request(url,
                           method: .get,
@@ -32,7 +46,7 @@ class ApiManager {
             queue.async { [weak self] in
                 let sema = DispatchSemaphore(value: 0)
                 
-                self?.loadFeeds(with: channel.fullPath, completion: { (xmlDoc) in
+                self?.loadFeeds(with: channel.rssPath, completion: { (xmlDoc) in
                     let items = xmlDoc?.root.children.first?.children.filter({ $0.name == "item" })
                     if items?.isEmpty ?? true {
                         UIAlertController.show(with: "Empty feeds")

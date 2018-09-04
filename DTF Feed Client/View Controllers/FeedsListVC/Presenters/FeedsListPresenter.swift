@@ -23,8 +23,11 @@ class FeedsListPresenter {
     // MARK: - Public methods
     
     public func loadFeeds(with url: String) {
-        HUD.show(.progress)
+        HUD.show(.labeledProgress(title: "Loading news", subtitle: "Please, wait"))
         ApiManager.shared.loadFeeds(with: url) { [weak self] (xmlDocument) in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
             guard let weakSelf = self else { return }
             guard let xmlDoc = xmlDocument else {
                 UIAlertController.show(with: "Feeds loaded with error")
@@ -38,9 +41,7 @@ class FeedsListPresenter {
                 items?.forEach({ feeds.append(Feed(with: $0)) })
                 weakSelf.delegate?.feedPresenter(weakSelf, didLoad: feeds)
             }
-            DispatchQueue.main.async {
-                HUD.hide()
-            }
+            
         }
     }
     

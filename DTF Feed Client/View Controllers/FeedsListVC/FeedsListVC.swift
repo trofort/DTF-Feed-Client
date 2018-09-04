@@ -29,7 +29,7 @@ class FeedsListVC: UIViewController {
     }()
     
     private var feedUrl: String {
-        return channel?.fullPath ?? ""
+        return channel?.rssPath ?? ""
     }
     
     var channel: Channel?

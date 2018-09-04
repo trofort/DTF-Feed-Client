@@ -15,15 +15,15 @@ class AllFeedsPresenter: FeedsListPresenter {
     // MARK: - Methods
     
     override func loadFeeds(with url: String) {
-        HUD.show(.progress)
+        HUD.show(.labeledProgress(title: "Loading news", subtitle: "Please, wait"))
         let channels = CacheManager.default.channels
         ApiManager.shared.loadAllFeeds(at: channels) { [weak self] feeds in
-            guard let weakSelf = self else { return }
-            let sortFeeds = feeds.sorted(by: { $0.date > $1.date })
-            weakSelf.delegate?.feedPresenter(weakSelf, didLoad: sortFeeds)
             DispatchQueue.main.async {
                 HUD.hide()
             }
+            guard let weakSelf = self else { return }
+            let sortFeeds = feeds.sorted(by: { $0.date > $1.date })
+            weakSelf.delegate?.feedPresenter(weakSelf, didLoad: sortFeeds)
         }
     }
     
