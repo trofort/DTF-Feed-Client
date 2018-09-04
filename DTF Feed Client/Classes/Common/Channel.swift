@@ -18,8 +18,9 @@ class Channel: Codable {
     init?(with host: URL, and data: Data) {
         self.host = host.host ?? ""
         guard let string = String(data: data, encoding: .utf8) ?? String(data: data, encoding: .ascii),
-            let firstMatch = string.matchesForRegexInText("<link rel=\\\"alternate\\\" type=\\\"application\\/rss\\+xml\\\"[^>]*href=\\\"[^>]*\\\"[^>]*>").first else { return nil }
-        let fixXML = firstMatch.replacingOccurrences(of: "/>", with: ">").replacingOccurrences(of: ">", with: "/>")
+            let firstMatch = string.matchesForRegexInText("<[\\s]*link[\\s]*(rel[\\s]*=[\\s]*\\\"alternate\\\"|type[\\s]*=[\\s]*\\\"application\\/rss\\+xml\\\")[\\s]*(rel[\\s]*=[\\s]*\\\"alternate\\\"|type[\\s]*=[\\s]*\\\"application\\/rss\\+xml\\\")[^>]*href[\\s]*=[\\s]*\\\"[^>]*\\\"[^>]*>").first else { return nil }
+        var fixXML = firstMatch.replacingOccurrences(of: "/>", with: ">").replacingOccurrences(of: ">", with: "/>")
+        fixXML = fixXML.replacingOccurrences(of: "title=\\\"[^\\\"]*\\\"", with: "", options: .regularExpression, range: nil)
         guard let root = try? AEXMLDocument(xml: fixXML).root,
             let fixURLString = root.attributes["href"]?.replacingOccurrences(of: "\\?(.+)", with: "", options: .regularExpression, range: nil),
             let href = URL(string: fixURLString) else { return nil }
