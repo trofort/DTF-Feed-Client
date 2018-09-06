@@ -14,6 +14,8 @@ class Channel: Codable {
     
     var host: String
     var rssPath: String
+    
+//    <[\s]*img[\s]*src[\s]*=[\s]*"[^"]*"[^>]*> - find image
 
     init?(with host: URL, and data: Data) {
         self.host = host.host ?? ""

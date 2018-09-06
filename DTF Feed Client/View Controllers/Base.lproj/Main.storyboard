@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,6 +63,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zde-hr-l4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-678" y="72"/>
+        </scene>
+        <!--Image PreviewVC-->
+        <scene sceneID="K7I-3M-J5B">
+            <objects>
+                <viewController storyboardIdentifier="ImagePreviewVC" id="SXe-dz-25g" customClass="ImagePreviewVC" customModule="DTF_Feed_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iWE-Ku-R8T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-xd-pZL">
+                                <rect key="frame" x="16" y="161.5" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aSa-xd-pZL" secondAttribute="height" multiplier="1:1" id="RaU-6w-kEj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aSa-xd-pZL" firstAttribute="leading" secondItem="nqo-tV-8Bt" secondAttribute="leading" constant="16" id="Oid-8M-SIB"/>
+                            <constraint firstItem="aSa-xd-pZL" firstAttribute="centerY" secondItem="iWE-Ku-R8T" secondAttribute="centerY" id="XfS-OC-qbV"/>
+                            <constraint firstItem="nqo-tV-8Bt" firstAttribute="trailing" secondItem="aSa-xd-pZL" secondAttribute="trailing" constant="16" id="t3O-TS-xF1"/>
+                            <constraint firstItem="aSa-xd-pZL" firstAttribute="centerX" secondItem="iWE-Ku-R8T" secondAttribute="centerX" id="vHL-VQ-UjE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nqo-tV-8Bt"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewImageView" destination="aSa-xd-pZL" id="Gew-Yk-jJX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrO-mK-vgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="-593"/>
         </scene>
         <!--Feeds ListVC-->
         <scene sceneID="tne-QT-ifu">

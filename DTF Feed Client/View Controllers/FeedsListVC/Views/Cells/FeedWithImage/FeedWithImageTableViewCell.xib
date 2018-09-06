@@ -33,7 +33,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sV2-Ic-2Hq">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sV2-Ic-2Hq" customClass="SelectableImageView" customModule="DTF_Feed_Client" customModuleProvider="target">
                     <rect key="frame" x="16" y="116" width="363" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="Lh2-Cs-7ZP"/>

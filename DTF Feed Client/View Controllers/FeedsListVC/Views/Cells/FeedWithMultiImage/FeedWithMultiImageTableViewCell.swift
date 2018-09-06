@@ -22,7 +22,7 @@ class FeedWithMultiImageTableViewCell: FeedTextTableViewCell {
             if imagesStackView.arrangedSubviews.count == 3 {
                 return
             }
-            let imageView = UIImageView(frame: .zero)
+            let imageView = SelectableImageView(frame: .zero)
             if let imageUrl = URL(string: $0) {
                 imageView.clipsToBounds = true
                 imageView.af_setImage(withURL: imageUrl)

@@ -36,6 +36,9 @@
 		8D350DD8213D69B500AEE725 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD7213D69B500AEE725 /* FeedVC.swift */; };
 		8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */; };
 		8D350DDF213D8A7100AEE725 /* AllFeedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */; };
+		8DBACA38214132E100176F42 /* SelectableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA37214132E100176F42 /* SelectableImageView.swift */; };
+		8DBACA3C2141362600176F42 /* ImagePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */; };
+		8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		8D350DD7213D69B500AEE725 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
 		8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFeedsPresenter.swift; sourceTree = "<group>"; };
+		8DBACA37214132E100176F42 /* SelectableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableImageView.swift; sourceTree = "<group>"; };
+		8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewVC.swift; sourceTree = "<group>"; };
+		8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewObject.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,7 @@
 				8D0ABCC62138272C006E1807 /* Helpers */,
 				8D0ABCB5213816A3006E1807 /* Classes */,
 				8D0ABCA821381052006E1807 /* View Controllers */,
+				8DBACA36214132B100176F42 /* Views */,
 				8D0ABC9521380FEF006E1807 /* AppDelegate.swift */,
 				8D0ABC9C21380FF1006E1807 /* Assets.xcassets */,
 				8D0ABC9E21380FF1006E1807 /* LaunchScreen.storyboard */,
@@ -129,6 +136,7 @@
 		8D0ABCA821381052006E1807 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8DBACA3A2141360500176F42 /* ImagePreviewVC */,
 				8D350DD6213D68F400AEE725 /* FeedVC */,
 				8D0ABCD221397E94006E1807 /* ChannelsVC */,
 				8D0ABCAA2138106D006E1807 /* FeedsListVC */,
@@ -187,6 +195,7 @@
 		8D0ABCB5213816A3006E1807 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DBACA3D2141373000176F42 /* Support */,
 				8D0ABCB6213816B0006E1807 /* Common */,
 				8D0ABCAF213813A2006E1807 /* Managers */,
 			);
@@ -282,6 +291,38 @@
 				8D350DDE213D8A7100AEE725 /* AllFeedsPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8DBACA36214132B100176F42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DBACA39214132EC00176F42 /* SelectableImageView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8DBACA39214132EC00176F42 /* SelectableImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8DBACA37214132E100176F42 /* SelectableImageView.swift */,
+			);
+			path = SelectableImageView;
+			sourceTree = "<group>";
+		};
+		8DBACA3A2141360500176F42 /* ImagePreviewVC */ = {
+			isa = PBXGroup;
+			children = (
+				8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */,
+			);
+			path = ImagePreviewVC;
+			sourceTree = "<group>";
+		};
+		8DBACA3D2141373000176F42 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -426,6 +467,7 @@
 				8D0ABCBA2138193D006E1807 /* FeedsListPresenter.swift in Sources */,
 				8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */,
 				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,
+				8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */,
 				8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */,
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,
 				8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */,
@@ -436,6 +478,8 @@
 				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
 				8D0ABCDF213B091C006E1807 /* CacheManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
+				8DBACA38214132E100176F42 /* SelectableImageView.swift in Sources */,
+				8DBACA3C2141362600176F42 /* ImagePreviewVC.swift in Sources */,
 				8D0ABCD4213AF4D2006E1807 /* UIAlertController+Utils.swift in Sources */,
 				8D0ABCC821382779006E1807 /* UITableView+Utils.swift in Sources */,
 			);
