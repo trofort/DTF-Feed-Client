@@ -17,6 +17,7 @@ class ImagePreviewVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var previewImageView: UIImageView!
+    @IBOutlet private weak var backgroundView: UIView!
     
     // MARK: - Variables
     
@@ -30,8 +31,8 @@ class ImagePreviewVC: UIViewController {
         configureView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         animateIn()
     }
     
@@ -49,7 +50,7 @@ class ImagePreviewVC: UIViewController {
     private func configureView() {
         previewImageView.frame = imagePreviewObject.frame
         previewImageView.image = imagePreviewObject.image
-        
+        backgroundView.alpha = 0.0
         view.isOpaque = false
     }
     
@@ -62,6 +63,7 @@ class ImagePreviewVC: UIViewController {
                         weakSelf.previewImageView.w = weakSelf.view.w - 32.0
                         weakSelf.previewImageView.h = weakSelf.view.w * (imageSize.height / imageSize.width)
                         weakSelf.previewImageView.frame.origin.y = weakSelf.view.center.y - (weakSelf.previewImageView.h / 2)
+                        weakSelf.backgroundView.alpha = 1.0
         })
     }
     
@@ -70,9 +72,10 @@ class ImagePreviewVC: UIViewController {
                        animations: { [weak self] in
                         guard let weakSelf = self else { return }
                         weakSelf.previewImageView.frame = weakSelf.imagePreviewObject.frame
+                        weakSelf.backgroundView.alpha = 0.0
         }) { [weak self] (completed) in
             if completed {
-                self?.dismissVC(completion: nil)
+                self?.dismiss(animated: false, completion: nil)
             }
         }
     }

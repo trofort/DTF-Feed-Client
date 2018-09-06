@@ -71,21 +71,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8j-75-XXW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-xd-pZL">
                                 <rect key="frame" x="16" y="161.5" width="343" height="343"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q8j-75-XXW" firstAttribute="top" secondItem="iWE-Ku-R8T" secondAttribute="top" id="6jA-A2-ZXd"/>
+                            <constraint firstItem="nqo-tV-8Bt" firstAttribute="trailing" secondItem="q8j-75-XXW" secondAttribute="trailing" id="EeN-Tu-46F"/>
+                            <constraint firstAttribute="bottom" secondItem="q8j-75-XXW" secondAttribute="bottom" id="J5N-o4-HLx"/>
+                            <constraint firstItem="q8j-75-XXW" firstAttribute="leading" secondItem="nqo-tV-8Bt" secondAttribute="leading" id="eIW-5c-f4S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nqo-tV-8Bt"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="q8j-75-XXW" id="xCY-VH-BvT"/>
                         <outlet property="previewImageView" destination="aSa-xd-pZL" id="Gew-Yk-jJX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrO-mK-vgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-593"/>
+            <point key="canvasLocation" x="84" y="-593.25337331334333"/>
         </scene>
         <!--Feeds ListVC-->
         <scene sceneID="tne-QT-ifu">

@@ -39,6 +39,7 @@ class SelectableImageView: UIImageView, ImagePreviewVCDelegate {
         addTapGesture { [weak self] (tap) in
             guard let topView = UIApplication.topViewController()?.view,
                 let weakSelf = self else { return }
+            weakSelf.alpha = 0.0
             var frame =  weakSelf.superview?.convert(weakSelf.frame, to: nil)
             weakSelf.showPreview(imagePreviewObject: ImagePreviewObject(image: weakSelf.image, frame: frame))
         }
@@ -48,11 +49,8 @@ class SelectableImageView: UIImageView, ImagePreviewVCDelegate {
         guard let previewVC = UIStoryboard.main.instantiateVC(ImagePreviewVC.self) else { return }
         previewVC.imagePreviewObject = imagePreviewObject
         previewVC.modalPresentationStyle = .overCurrentContext
-        previewVC.modalTransitionStyle = .crossDissolve
         previewVC.delegate = self
-        UIApplication.topViewController()?.present(previewVC, animated: true, completion: { [weak self] in
-            self?.alpha = 0.0
-        })
+        UIApplication.topViewController()?.present(previewVC, animated: false, completion: nil)
     }
     
     // MARK: - ImagePreviewVCDelegate
