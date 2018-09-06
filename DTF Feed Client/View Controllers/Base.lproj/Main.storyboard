@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -72,20 +71,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-xd-pZL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-xd-pZL">
                                 <rect key="frame" x="16" y="161.5" width="343" height="343"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="aSa-xd-pZL" secondAttribute="height" multiplier="1:1" id="RaU-6w-kEj"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="aSa-xd-pZL" firstAttribute="leading" secondItem="nqo-tV-8Bt" secondAttribute="leading" constant="16" id="Oid-8M-SIB"/>
-                            <constraint firstItem="aSa-xd-pZL" firstAttribute="centerY" secondItem="iWE-Ku-R8T" secondAttribute="centerY" id="XfS-OC-qbV"/>
-                            <constraint firstItem="nqo-tV-8Bt" firstAttribute="trailing" secondItem="aSa-xd-pZL" secondAttribute="trailing" constant="16" id="t3O-TS-xF1"/>
-                            <constraint firstItem="aSa-xd-pZL" firstAttribute="centerX" secondItem="iWE-Ku-R8T" secondAttribute="centerX" id="vHL-VQ-UjE"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nqo-tV-8Bt"/>
                     </view>
                     <connections>

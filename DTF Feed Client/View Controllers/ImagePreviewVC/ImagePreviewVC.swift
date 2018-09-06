@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol ImagePreviewVCDelegate {
+    @objc optional func imagePreviewVCDidDisappear(_ imagePreviewVC: ImagePreviewVC)
+}
+
 class ImagePreviewVC: UIViewController {
     
     // MARK: - Outlets
@@ -17,6 +21,7 @@ class ImagePreviewVC: UIViewController {
     // MARK: - Variables
     
     var imagePreviewObject = ImagePreviewObject()
+    var delegate: ImagePreviewVCDelegate?
     
     // MARK: - Life Cycle
     
@@ -32,8 +37,11 @@ class ImagePreviewVC: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-//        animateOut()
-        dismissVC(completion: nil)
+        animateOut()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.imagePreviewVCDidDisappear?(self)
+        super.viewWillDisappear(animated)
     }
     
     // MARK: - Methods
@@ -41,17 +49,20 @@ class ImagePreviewVC: UIViewController {
     private func configureView() {
         previewImageView.frame = imagePreviewObject.frame
         previewImageView.image = imagePreviewObject.image
+        
         view.isOpaque = false
     }
     
     private func animateIn() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.previewImageView.frame.origin.x = 16.0
-            weakSelf.previewImageView.w = weakSelf.view.w - 32.0
-            weakSelf.previewImageView.h = weakSelf.view.w - 32.0
-            weakSelf.previewImageView.frame.origin.y = weakSelf.view.center.y - (weakSelf.previewImageView.h / 2)
-        }
+        let imageSize = imagePreviewObject.image.size
+        UIView.animate(withDuration: 0.3,
+                       animations: { [weak self] in
+                        guard let weakSelf = self else { return }
+                        weakSelf.previewImageView.frame.origin.x = 16.0
+                        weakSelf.previewImageView.w = weakSelf.view.w - 32.0
+                        weakSelf.previewImageView.h = weakSelf.view.w * (imageSize.height / imageSize.width)
+                        weakSelf.previewImageView.frame.origin.y = weakSelf.view.center.y - (weakSelf.previewImageView.h / 2)
+        })
     }
     
     private func animateOut() {

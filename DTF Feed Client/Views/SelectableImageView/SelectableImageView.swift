@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SelectableImageView: UIImageView {
+class SelectableImageView: UIImageView, ImagePreviewVCDelegate {
     
     // MARK: - Initialize
     
@@ -39,8 +39,7 @@ class SelectableImageView: UIImageView {
         addTapGesture { [weak self] (tap) in
             guard let topView = UIApplication.topViewController()?.view,
                 let weakSelf = self else { return }
-            let window = UIApplication.shared.keyWindow
-            let frame =  weakSelf.convert(weakSelf.frame, from: topView)
+            var frame =  weakSelf.superview?.convert(weakSelf.frame, to: nil)
             weakSelf.showPreview(imagePreviewObject: ImagePreviewObject(image: weakSelf.image, frame: frame))
         }
     }
@@ -50,7 +49,16 @@ class SelectableImageView: UIImageView {
         previewVC.imagePreviewObject = imagePreviewObject
         previewVC.modalPresentationStyle = .overCurrentContext
         previewVC.modalTransitionStyle = .crossDissolve
-        UIApplication.topViewController()?.presentVC(previewVC)
+        previewVC.delegate = self
+        UIApplication.topViewController()?.present(previewVC, animated: true, completion: { [weak self] in
+            self?.alpha = 0.0
+        })
+    }
+    
+    // MARK: - ImagePreviewVCDelegate
+    
+    func imagePreviewVCDidDisappear(_ imagePreviewVC: ImagePreviewVC) {
+        alpha = 1.0
     }
     
 }
