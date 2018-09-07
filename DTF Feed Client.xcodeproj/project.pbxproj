@@ -39,6 +39,7 @@
 		8DBACA38214132E100176F42 /* SelectableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA37214132E100176F42 /* SelectableImageView.swift */; };
 		8DBACA3C2141362600176F42 /* ImagePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */; };
 		8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */; };
+		8DBACA4121426E1C00176F42 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA4021426E1C00176F42 /* UIView+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		8DBACA37214132E100176F42 /* SelectableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableImageView.swift; sourceTree = "<group>"; };
 		8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewVC.swift; sourceTree = "<group>"; };
 		8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewObject.swift; sourceTree = "<group>"; };
+		8DBACA4021426E1C00176F42 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 				8D0ABCD5213AF7ED006E1807 /* UIStoryboard+Utils.swift */,
 				8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */,
 				8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */,
+				8DBACA4021426E1C00176F42 /* UIView+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
 				8D350DDF213D8A7100AEE725 /* AllFeedsPresenter.swift in Sources */,
 				8D0ABCBA2138193D006E1807 /* FeedsListPresenter.swift in Sources */,
+				8DBACA4121426E1C00176F42 /* UIView+Utils.swift in Sources */,
 				8D350DDA213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift in Sources */,
 				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,
 				8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */,

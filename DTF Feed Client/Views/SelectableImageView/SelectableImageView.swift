@@ -38,10 +38,11 @@ class SelectableImageView: UIImageView, ImagePreviewVCDelegate {
     private func configure() {
         addTapGesture { [weak self] (tap) in
             guard let topView = UIApplication.topViewController()?.view,
-                let weakSelf = self else { return }
+                let weakSelf = self,
+                let image = weakSelf.image else { return }
             weakSelf.alpha = 0.0
             var frame =  weakSelf.superview?.convert(weakSelf.frame, to: nil)
-            weakSelf.showPreview(imagePreviewObject: ImagePreviewObject(image: weakSelf.image, frame: frame))
+            weakSelf.showPreview(imagePreviewObject: ImagePreviewObject(image: image, frame: frame))
         }
     }
     
