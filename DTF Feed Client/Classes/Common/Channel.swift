@@ -30,7 +30,7 @@ class Channel: Codable {
         xmlMetaData.root["rss"].children.forEach { (rssElement) in
             guard let rssPath = rssElement.rssPath(with: host), let channelHost = host.host else { return }
             let title = rssElement.attributes["title"] ?? channelHost
-            let iconPath = xmlMetaData.root["icon"].iconPath(with: host)
+            let iconPath = xmlMetaData.root["icon"]["link"].iconPath(with: host)
             channels.append(Channel(host: channelHost, rssPath: rssPath, title: title, iconPath: iconPath))
         }
         return channels

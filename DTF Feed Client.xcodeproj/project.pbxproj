@@ -44,6 +44,9 @@
 		8DDE277E2147AAAC0003DF41 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE277D2147AAAC0003DF41 /* Data+Utils.swift */; };
 		8DDE27802147AC940003DF41 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE277F2147AC940003DF41 /* String+Utils.swift */; };
 		8DDE27882147EE220003DF41 /* AEXMLElement+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE27872147EE220003DF41 /* AEXMLElement+Utils.swift */; };
+		8DDE278C2147F23C0003DF41 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE278B2147F23C0003DF41 /* ChannelTableViewCell.swift */; };
+		8DDE278E2147F3580003DF41 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDE278D2147F3580003DF41 /* ChannelTableViewCell.xib */; };
+		8DDE27912147F4930003DF41 /* ChannelTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE27902147F4930003DF41 /* ChannelTableViewCellFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		8DDE277D2147AAAC0003DF41 /* Data+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
 		8DDE277F2147AC940003DF41 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		8DDE27872147EE220003DF41 /* AEXMLElement+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Utils.swift"; sourceTree = "<group>"; };
+		8DDE278B2147F23C0003DF41 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		8DDE278D2147F3580003DF41 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
+		8DDE27902147F4930003DF41 /* ChannelTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCellFactory.swift; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +282,8 @@
 		8D0ABCD221397E94006E1807 /* ChannelsVC */ = {
 			isa = PBXGroup;
 			children = (
+				8DDE278F2147F4610003DF41 /* Factory */,
+				8DDE27892147F20A0003DF41 /* Views */,
 				8D0ABCDB213B07F8006E1807 /* Adapter */,
 				8D0ABCD7213AF8F7006E1807 /* ChannelsVC.swift */,
 				8D0ABCD9213B07DC006E1807 /* ChannelPresenter.swift */,
@@ -338,6 +346,31 @@
 				8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		8DDE27892147F20A0003DF41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DDE278A2147F2130003DF41 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8DDE278A2147F2130003DF41 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8DDE278B2147F23C0003DF41 /* ChannelTableViewCell.swift */,
+				8DDE278D2147F3580003DF41 /* ChannelTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8DDE278F2147F4610003DF41 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8DDE27902147F4930003DF41 /* ChannelTableViewCellFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		EE649CDC6873E7D2CC7A5665 /* Pods */ = {
@@ -415,6 +448,7 @@
 				8D0ABCC521382504006E1807 /* FeedTextTableViewCell.xib in Resources */,
 				8D0ABC9B21380FEF006E1807 /* Main.storyboard in Resources */,
 				8D0ABCCC21382DC2006E1807 /* FeedWithMultiImageTableViewCell.xib in Resources */,
+				8DDE278E2147F3580003DF41 /* ChannelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +513,7 @@
 				8DDE27882147EE220003DF41 /* AEXMLElement+Utils.swift in Sources */,
 				8D0ABCAE21381375006E1807 /* FeedsListVC.swift in Sources */,
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
+				8DDE278C2147F23C0003DF41 /* ChannelTableViewCell.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
 				8D350DDF213D8A7100AEE725 /* AllFeedsPresenter.swift in Sources */,
 				8D0ABCBA2138193D006E1807 /* FeedsListPresenter.swift in Sources */,
@@ -487,6 +522,7 @@
 				8D0ABCD6213AF7ED006E1807 /* UIStoryboard+Utils.swift in Sources */,
 				8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */,
 				8D0ABCC021382415006E1807 /* FeedWithMultiImageTableViewCell.swift in Sources */,
+				8DDE27912147F4930003DF41 /* ChannelTableViewCellFactory.swift in Sources */,
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,
 				8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */,
 				8D0ABCDA213B07DC006E1807 /* ChannelPresenter.swift in Sources */,

@@ -48,6 +48,8 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
         super.init()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(T: ChannelTableViewCell.self)
     }
     
     // MARK: - Methods
@@ -70,14 +72,9 @@ class ChannelsTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionType = ChannelsSectionType(rawValue: indexPath.section)
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = sectionType == .all ? "All News" : channels[indexPath.row].title
-        if sectionType != .all, let iconPath = channels[indexPath.row].iconPath,
-            let iconUrl = URL(string: iconPath) {
-            cell.imageView?.contentMode = .scaleToFill
-            cell.imageView?.af_setImage(withURL: iconUrl)
-        }
-        return cell
+        return ChannelTableViewCellFactory.cell(for: sectionType == .all ? nil : channels[indexPath.row],
+                                                indexPath: indexPath,
+                                                tableView: tableView)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
