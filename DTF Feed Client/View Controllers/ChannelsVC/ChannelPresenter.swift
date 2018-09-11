@@ -32,12 +32,13 @@ class ChannelPresenter {
                                                                         UIAlertController.show(with: "Error", message: "Please, check your internet connection")
                                                                         return
                                                                 }
-                                                                guard let weakSelf = self,
-                                                                    let newChannel = Channel(with: channelUrl, and: channelData) else {
+                                                                
+                                                                let newChannels = Channel.generateChannels(from: channelUrl, and: channelData)
+                                                                guard let weakSelf = self, !newChannels.isEmpty else {
                                                                         UIAlertController.show(with: "Error", message: "Host without rss channel")
                                                                         return
                                                                 }
-                                                                CacheManager.default.channels.append(newChannel)
+                                                                CacheManager.default.channels.append(contentsOf: newChannels)
                                                                 weakSelf.delegate?.channelPresenterWillReloadData(weakSelf)
                                     })
                                 } else {

@@ -85,7 +85,6 @@ class ImagePreviewVC: UIViewController {
                     }
                 })
             }
-            
         }
         
         backgroundView.addTapGesture { [weak self] (tap) in

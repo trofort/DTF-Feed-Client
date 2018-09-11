@@ -40,6 +40,10 @@
 		8DBACA3C2141362600176F42 /* ImagePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */; };
 		8DBACA3F2141373F00176F42 /* ImagePreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */; };
 		8DBACA4121426E1C00176F42 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBACA4021426E1C00176F42 /* UIView+Utils.swift */; };
+		8DDE277C2146AE2B0003DF41 /* AEXMLDocument+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE277B2146AE2B0003DF41 /* AEXMLDocument+Utils.swift */; };
+		8DDE277E2147AAAC0003DF41 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE277D2147AAAC0003DF41 /* Data+Utils.swift */; };
+		8DDE27802147AC940003DF41 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE277F2147AC940003DF41 /* String+Utils.swift */; };
+		8DDE27882147EE220003DF41 /* AEXMLElement+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE27872147EE220003DF41 /* AEXMLElement+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		8DBACA3B2141362600176F42 /* ImagePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewVC.swift; sourceTree = "<group>"; };
 		8DBACA3E2141373F00176F42 /* ImagePreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewObject.swift; sourceTree = "<group>"; };
 		8DBACA4021426E1C00176F42 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		8DDE277B2146AE2B0003DF41 /* AEXMLDocument+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEXMLDocument+Utils.swift"; sourceTree = "<group>"; };
+		8DDE277D2147AAAC0003DF41 /* Data+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
+		8DDE277F2147AC940003DF41 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		8DDE27872147EE220003DF41 /* AEXMLElement+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Utils.swift"; sourceTree = "<group>"; };
 		92BB9CFACCDFF6C924F3A63F /* Pods-DTF Feed Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTF Feed Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTF Feed Client/Pods-DTF Feed Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +257,10 @@
 				8D0ABCE2213B2E99006E1807 /* Date+Utils.swift */,
 				8D350DD9213D6DCD00AEE725 /* UIBarButtonItem+Utils.swift */,
 				8DBACA4021426E1C00176F42 /* UIView+Utils.swift */,
+				8DDE277B2146AE2B0003DF41 /* AEXMLDocument+Utils.swift */,
+				8DDE27872147EE220003DF41 /* AEXMLElement+Utils.swift */,
+				8DDE277D2147AAAC0003DF41 /* Data+Utils.swift */,
+				8DDE277F2147AC940003DF41 /* String+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -463,6 +475,8 @@
 				8D0ABCD8213AF8F7006E1807 /* ChannelsVC.swift in Sources */,
 				8D0ABCE3213B2E99006E1807 /* Date+Utils.swift in Sources */,
 				8D350DD5213D658A00AEE725 /* Channel.swift in Sources */,
+				8DDE277C2146AE2B0003DF41 /* AEXMLDocument+Utils.swift in Sources */,
+				8DDE27882147EE220003DF41 /* AEXMLElement+Utils.swift in Sources */,
 				8D0ABCAE21381375006E1807 /* FeedsListVC.swift in Sources */,
 				8D0ABCB8213816C3006E1807 /* Feed.swift in Sources */,
 				8D0ABCBE21382226006E1807 /* FeedWithImageTableViewCell.swift in Sources */,
@@ -476,12 +490,14 @@
 				8D0ABCBC21382156006E1807 /* FeedTextTableViewCell.swift in Sources */,
 				8D0ABCCF213859DA006E1807 /* FeedTableViewCellFactory.swift in Sources */,
 				8D0ABCDA213B07DC006E1807 /* ChannelPresenter.swift in Sources */,
+				8DDE277E2147AAAC0003DF41 /* Data+Utils.swift in Sources */,
 				8D350DD8213D69B500AEE725 /* FeedVC.swift in Sources */,
 				8D0ABCB421381684006E1807 /* FeedAdapter.swift in Sources */,
 				8D0ABCE1213B0B77006E1807 /* ChannelsTableViewAdapter.swift in Sources */,
 				8D0ABCB121381490006E1807 /* ApiManager.swift in Sources */,
 				8D0ABCDF213B091C006E1807 /* CacheManager.swift in Sources */,
 				8D0ABC9621380FEF006E1807 /* AppDelegate.swift in Sources */,
+				8DDE27802147AC940003DF41 /* String+Utils.swift in Sources */,
 				8DBACA38214132E100176F42 /* SelectableImageView.swift in Sources */,
 				8DBACA3C2141362600176F42 /* ImagePreviewVC.swift in Sources */,
 				8D0ABCD4213AF4D2006E1807 /* UIAlertController+Utils.swift in Sources */,

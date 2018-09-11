@@ -14,22 +14,25 @@ class Channel: Codable {
     
     var host: String
     var rssPath: String
-    
-//    <[\s]*img[\s]*src[\s]*=[\s]*"[^"]*"[^>]*> - find image
+    var title: String
+    var iconPath: String?
 
-    init?(with host: URL, and data: Data) {
-        self.host = host.host ?? ""
-        guard let string = String(data: data, encoding: .utf8) ?? String(data: data, encoding: .ascii),
-            let firstMatch = string.matchesForRegexInText("<[\\s]*link[\\s]*(rel[\\s]*=[\\s]*\\\"alternate\\\"|type[\\s]*=[\\s]*\\\"application\\/rss\\+xml\\\")[\\s]*(rel[\\s]*=[\\s]*\\\"alternate\\\"|type[\\s]*=[\\s]*\\\"application\\/rss\\+xml\\\")[^>]*href[\\s]*=[\\s]*\\\"[^>]*\\\"[^>]*>").first else { return nil }
-        var fixXML = firstMatch.replacingOccurrences(of: "/>", with: ">").replacingOccurrences(of: ">", with: "/>")
-        fixXML = fixXML.replacingOccurrences(of: "title=\\\"[^\\\"]*\\\"", with: "", options: .regularExpression, range: nil)
-        guard let root = try? AEXMLDocument(xml: fixXML).root,
-            let fixURLString = root.attributes["href"]?.replacingOccurrences(of: "\\?(.+)", with: "", options: .regularExpression, range: nil),
-            let href = URL(string: fixURLString) else { return nil }
-        if href.host != nil {
-            rssPath = href.absoluteString
-        } else {
-            rssPath = host.appendingPathComponent(href.absoluteString).absoluteString
+    init(host: String, rssPath: String, title: String, iconPath: String?) {
+        self.host = host
+        self.rssPath = rssPath
+        self.title = title
+        self.iconPath = iconPath
+    }
+    
+    class func generateChannels(from host: URL, and data: Data) -> [Channel] {
+        var channels = [Channel]()
+        guard let xmlMetaData = AEXMLDocument(channelData: data) else { return channels }
+        xmlMetaData.root["rss"].children.forEach { (rssElement) in
+            guard let rssPath = rssElement.rssPath(with: host), let channelHost = host.host else { return }
+            let title = rssElement.attributes["title"] ?? channelHost
+            let iconPath = xmlMetaData.root["icon"].iconPath(with: host)
+            channels.append(Channel(host: channelHost, rssPath: rssPath, title: title, iconPath: iconPath))
         }
+        return channels
     }
 }
